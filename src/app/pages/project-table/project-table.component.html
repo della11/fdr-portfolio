@@ -1,0 +1,24 @@
+<div class="overflow-x-auto">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Technologies</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (el of values ;track el.id){
+
+        <tr>
+          <td>{{el.name}}</td>
+          <td> {{el.description}}</td>
+          <td> {{el.tags[0]}}</td>
+        </tr>
+
+
+      }
+    <tbody>
+  </table>
+
+</div>
