@@ -1,4 +1,4 @@
-<div class="navbar bg-base-100">
+<header class="navbar bg-base-100">
   <div class="navbar-start">
     <div class="dropdown">
       <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -13,7 +13,7 @@
             <li><a (click)="navigateItem('Projects','2')">TODO 2</a></li>
           </ul>
         </li>
-        <li><a>Contact Me!</a></li>
+        <li><a (click)="navigate('ContactMe')">Contact Me!</a></li>
       </ul>
     </div>
     <a class="btn btn-ghost text-xl" (click)="navigate('')" >FabioDellaRosa</a>
@@ -47,4 +47,4 @@
 
     </label>
   </div>
-</div>
+</header>

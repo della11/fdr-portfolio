@@ -1,24 +1,19 @@
-<div class="overflow-x-auto">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Technologies</th>
-      </tr>
-    </thead>
-    <tbody>
-      @for (el of values ;track el.id){
+<div class="grid md:grid-cols-3 sm:grid-cols-1 lg:grid-cols-3 gap-3">
 
-        <tr>
-          <td>{{el.name}}</td>
-          <td> {{el.description}}</td>
-          <td> {{el.tags[0]}}</td>
-        </tr>
-
-
-      }
-    <tbody>
-  </table>
-
+  @for (value of values ; track value.id) {
+    <div class="card w-96 m-5 bg-base-100 shadow-xl glass">
+      <div class="card-body">
+        <h2 class="card-title">{{value.name}}</h2>
+        <p>{{value.description}}</p>
+      </div>
+      <figure class="px-10 pt-10">
+        <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Me" class="rounded-xl" />
+      </figure>
+      <div class="card-actions m-3">
+        @for (tag of value.tags ; track tag) {
+          <div class="badge badge-primary">{{tag}}</div>
+        }
+      </div>
+    </div>
+  }
 </div>

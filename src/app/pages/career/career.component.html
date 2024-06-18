@@ -1,1 +1,42 @@
-<p>career works!</p>
+<!---->
+<div class="container max-w-full max-h-full">
+
+  <div class="overflow-x-auto">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>
+            Company
+          </th>
+          <th>
+            Period
+          </th>
+          <th>
+            Work Type
+          </th>
+          <th>
+            Skills
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        @for (career of careers; track career.start) {
+
+          <tr>
+            <td>
+              {{career.company.name}} ( {{career.company.location}})
+            </td>
+            <td> {{career.start.toLocaleDateString()}} - {{career.end === null ? 'current' : career.end.toLocaleDateString()}} </td>
+            <td> {{career.type}}</td>
+            <td>
+              @for (skill of career.skills ; track skill) {
+                <div [class]="getBadgeClass()">{{skill}}</div>
+              }
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
